@@ -29,7 +29,7 @@
             </div>
             <div class='form-group'>
                 <label for='berita'>Isi Berita</label>
-                <textarea class='form-control' name='berita' id='editor' value=".$berita."></textarea>
+                <textarea class='form-control' name='berita' id='editor'>".$berita."</textarea>
             </div>
             <div class='form-group d-flex justify-content-center'>
                 <button type='submit' class='btn btn-primary' name='submit'>Submit</button>

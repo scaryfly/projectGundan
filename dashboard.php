@@ -93,6 +93,7 @@
                     <a class="dropdown-item" href="./reservasiKunjungan.php">Reservasi Kunjungan</a>
                 </div>
             </div>
+            <a class="navbrand" href="index.php">Berita</a>
             <a class="navbrand" href="login.php">Masuk</a>
         </div>
     </div>
