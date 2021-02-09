@@ -20,6 +20,11 @@ include('./dashboard.php');
                         <button type='submit' class='btn btn-primary' name='submit'>Submit</button>
                     </div>
                 </form>
+                <div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Belum menjadi member? <a href="./register.php" class="ml-2">Registrasi</a>
+					</div>
+				</div>
             </div>
         </div>
     </div>

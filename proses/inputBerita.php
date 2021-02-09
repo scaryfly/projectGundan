@@ -17,7 +17,6 @@
         $judul = $_POST['judul'];
         $berita = $_POST ['berita'];
         $tgl = date("Y-m-d");
-        echo "<script>console.log(`"."INSERT INTO tbberita (gambar, judul, berita, tgl_upload) values ('$foto', '$judul', '$berita', ' $tgl') "."`);</script>";
         $query = mysqli_query($conn,"INSERT INTO tbberita (gambar, judul, berita, tgl_upload) values ('$foto', '$judul', '$berita', ' $tgl') ");
         if ($query){
             echo "<script>alert ('Simpan Berita Berhasil'); window.location='../adminContent/berita.php'</script>";
