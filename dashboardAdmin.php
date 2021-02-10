@@ -1,6 +1,6 @@
 <?php   
     session_start();
-    if( !isset($_SESSION['user']) ){
+    if( !isset($_SESSION['admin']) ){
         header("location:../login.php");
     }
     include("../db.php");
@@ -40,20 +40,6 @@
         <a class="navbar-brand" href="#">
             <img src="../gambar/rsz_2logo.png" alt="logo">
         </a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <p class="navbar-brand">
-                    <img src="../gambar/phone.png" class="d-inline-block align-top" alt="">
-                    <span>Telp : (0361) 723969</span>
-                </p>
-            </li>
-            <li class="nav-item">
-                <p class="navbar-brand">
-                    <img src="../gambar/email.png" class="d-inline-block align-top" alt="">
-                    <span>E-mail : sekr-btikk@bppt.go.id</span>
-                </p>
-            </li>
-        </ul>
     </nav>
     
 <div class="d-flex bg-light" id="wrapper">
@@ -62,16 +48,8 @@
 <div class="bg-white border-right" id="sidebar-wrapper">
   <div class="sidebar-heading text-black">Daftar Menu</div>
   <div class="list-group list-group-flush">
-    <a href="./pemesananJasa.php" class="list-group-item list-group-item-action bg-white text-black ">Pemesanan Jasa</a>
-    <a href="./kunjungan.php" class="list-group-item list-group-item-action bg-white text-black ">Kunjungan</a>
-    <a href="./kategoriJasa.php" class="list-group-item list-group-item-action bg-white text-black ">Kategori Jasa</a>
-    <a href="./kategoriKunjungan.php" class="list-group-item list-group-item-action bg-white text-black ">Kategori Kunjungan</a>
-    <a href="./penjelasanPelayananInformasi.php" class="list-group-item list-group-item-action bg-white text-black ">Penjelasan Pelayanan Informasi</a>
-    <a href="./penjelasanPelayananJasa.php" class="list-group-item list-group-item-action bg-white text-black ">Penjelasan Pelayanan Jasa</a>
     <a href="./admin.php" class="list-group-item list-group-item-action bg-white text-black ">Admin</a>
-    <a href="./berita.php" class="list-group-item list-group-item-action bg-white text-black ">Berita</a>
-    <a href="./sambutan.php" class="list-group-item list-group-item-action bg-white text-black ">Sambutan</a>
-    <a href="./visiMisi.php" class="list-group-item list-group-item-action bg-white text-black ">Visi dan Misi</a>
+    <a href="./berita.php" class="list-group-item list-group-item-action bg-white text-black ">Berita</a> 
     <a href="./galery.php" class="list-group-item list-group-item-action bg-white text-black ">Galery</a>
   </div>
 </div>
@@ -89,12 +67,12 @@
       <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         <li class="nav-item dropdown">
         <?php
-           $id = $_SESSION['user'];
-           $sql = mysqli_query($conn,"SELECT name FROM user where id = $id");
+           $id = $_SESSION['admin'];
+           $sql = mysqli_query($conn,"SELECT nama FROM tb_login where id = $id");
            $admin = mysqli_fetch_assoc($sql); #memecahkan data row yang di pilih menjadidata dalam bentuk array 
            echo "
           <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-            ".$admin['name']."
+            ".$admin['nama']."
           </a>
           <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
             <a class='dropdown-item' href='./editPassword.php?id=".$id."'>Ubah Password</a>
@@ -109,8 +87,3 @@
 
   <div class="container-fluid">
     <div class="card" id="user-content-wrapper">
-        
-
-    
-
-    

@@ -15,14 +15,19 @@
             $foto = 'gambar/default';
         }
         $judul = $_POST['judul'];
+        $deskripsi = $_POST['deskripsi'];
+        
+        $uploader = $_POST['uploader'];
+        
+        $tgl = date("Y-m-d");
 
-        $query = mysqli_query($conn,"INSERT INTO tbgalery (foto, judul) values ('$foto', '$judul') ");
+        $query = mysqli_query($conn,"INSERT INTO tb_galery (gambar, nama_gambar, deskripsi, uploader, tgl_upload) values ('$foto','$judul','$deskripsi','$uploader','$tgl') ");
         if ($query){
-            echo "<script>alert ('Simpan Foto Berhasil'); window.location='../adminContent/galery.php'</script>";
+            echo "<script>alert ('Simpan Foto Berhasil'); window.location='../admin/galery.php'</script>";
         }else{
-            echo "<script>alert('Simpan Foto Gagal'); window.location='../adminContent/galery.php'</script>";
+            echo "<script>alert('Simpan Foto Gagal'); window.location='../admin/galery.php'</script>";
         }
     }else{
-        echo "<script>alert('Simpan Foto Gagal'); window.location='../adminContent/galery.php'</script>";
+        echo "<script>alert('Simpan Foto Gagal'); window.location='../admin/galery.php'</script>";
     }
 ?>

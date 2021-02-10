@@ -5,8 +5,7 @@
         $id = $_GET['id'];
         $judul = $_POST['judul'];
         $berita = $_POST ['berita'];
-        $tgl = date("Y-m-d");
-        $sql = mysqli_query($conn,"SELECT * FROM tbberita where id_berita = '$id'");
+        $sql = mysqli_query($conn,"SELECT * FROM tb_berita_terkini where id = '$id'");
         $data = mysqli_fetch_array($sql);
         $foto = $data['gambar'];
         $tmpFoto = $_FILES['gambar']['name']; //mengambil data nama file
@@ -24,13 +23,13 @@
                 $foto = 'gambar/default';
             }
         }
-        $sql = mysqli_query($conn,"update tbberita set id_berita='$id',gambar='$foto',judul='$judul',berita='$berita', tgl_upload='$tgl'  where id_berita='$id'");
+        $sql = mysqli_query($conn,"update tb_berita_terkini set gambar = '$foto', nama_berita = '$judul', isi_berita = '$berita' where id=$id");
         if ($sql) {
-            echo "<script>alert ('Edit Berita Berhasil'); window.location='../adminContent/berita.php'</script>";
+            echo "<script>alert ('Edit Berita Berhasil'); window.location='../admin/berita.php'</script>";
         }else{
-            echo "<script>alert ('Edit Berita Gagal'); window.location='../adminContent/editBerita.php?id=".$id."'</script>";
+            echo "<script>alert ('Edit Berita Gagal'); window.location='../admin/editBerita.php?id=".$id."'</script>";
         }
     }else{
-        echo "<script>alert ('Edit Berita Gagal'); window.location='../adminContent/editBerita.php?id=".$id."'</script>";
+        echo "<script>alert ('Edit Berita Gagal'); window.location='../admin/editBerita.php?id=".$id."'</script>";
     }
 ?>

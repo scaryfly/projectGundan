@@ -1,5 +1,5 @@
 <?php   
-    include("../dashboardUser.php");
+    include("../dashboardAdmin.php");
 ?>
 
 <div class="card-title text-center" id="user-content-title">
@@ -10,12 +10,12 @@
         <?php
         $id_berita = $_GET['id'];
 
-        $sql = mysqli_query($conn,"SELECT * FROM tbberita where id_berita = $id_berita");
+        $sql = mysqli_query($conn,"SELECT * FROM tb_berita_terkini where id = $id_berita");
         $data = mysqli_fetch_assoc($sql); #memecahkan data row yang di pilih menjadidata dalam bentuk array 
 
         $gambar = $data['gambar'];  #dapatkan gambar dari data array (row) 'gambar'
-        $judul = $data['judul']; #dapatkan jurusan mahasiswa dari data array (row) ‘jurusan’
-        $berita = $data['berita'];#dapatkan kelamin mahasiswa array (row) 'berita'
+        $judul = $data['nama_berita']; #dapatkan jurusan mahasiswa dari data array (row) ‘jurusan’
+        $berita = $data['isi_berita'];#dapatkan kelamin mahasiswa array (row) 'berita'
         
         echo "
         <form enctype='multipart/form-data' action='../proses/editBerita.php?id=".$id_berita."' method='post' style='margin-left : 10px; margin-right:10px;'>

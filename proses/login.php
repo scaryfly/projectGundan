@@ -5,6 +5,8 @@
         echo "<script>console.log('request masuk coey');</script>";
         $username = $_POST['username'];
         $password = $_POST ['password'];
+
+//member
         $query = mysqli_query($conn,"select id_member, username, password from tabel_member where username = '".$username."'");
         if($query){
             if(mysqli_num_rows($query) > 0){
@@ -19,6 +21,7 @@
                     echo "<script>alert('Username dan Password Salah');window.location='../login.php';</script>";    
                 }
             }else{
+//admin
                 $query = mysqli_query($conn,"select id, username, password from tb_login where username = '".$username."'");
                 if($query){
                     if(mysqli_num_rows($query) > 0){
@@ -27,7 +30,7 @@
                             session_start();
                             $_SESSION['admin'] = $user['id'];
 
-                            echo "<script>window.location='../adminContent/berita.php';</script>";
+                            echo "<script>window.location='../admin/admin.php';</script>";
 
                         }else{
                             echo "<script>alert('Username dan Password Salah');window.location='../login.php';</script>";    

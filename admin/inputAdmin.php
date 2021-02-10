@@ -1,5 +1,5 @@
 <?php
-    include("../dashboardUser.php");
+    include("../dashboardAdmin.php");
 ?>
 
 <div class="card-title text-center" id="user-content-title">
@@ -11,25 +11,6 @@
             <div class='form-group'>
                 <label for='name'>Nama</label>
                 <input type='text' class='form-control' name='name' id='name' required>
-            </div>
-            <div class="form-group">
-                <label for="jenis_kelamin">Jenis Kelamin</label>
-                <select class="form-control" name='jenis_kelamin' id="jenis_kelamin">
-                    <option>laki-laki</option>
-                    <option>perempuan</option>
-                </select>
-            </div>
-            <div class='form-group'>
-                <label for='telp'>Telp</label>
-                <input type='text' class='form-control' name='telp' id='telp' required>
-            </div>
-            <div class='form-group'>
-                <label for='alamat'>Alamat</label>
-                <input type='text' class='form-control' name='alamat' id='alamat' required>
-            </div>
-            <div class='form-group'>
-                <label for='email'>Email</label>
-                <input type='email' class='form-control' name='email' id='email' required>
             </div>
             <div class='form-group'>
                 <label for='username'>Username</label>

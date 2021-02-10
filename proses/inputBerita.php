@@ -16,14 +16,13 @@
         }
         $judul = $_POST['judul'];
         $berita = $_POST ['berita'];
-        $tgl = date("Y-m-d");
-        $query = mysqli_query($conn,"INSERT INTO tbberita (gambar, judul, berita, tgl_upload) values ('$foto', '$judul', '$berita', ' $tgl') ");
+        $query = mysqli_query($conn,"INSERT INTO tb_berita_terkini (gambar, nama_berita, isi_berita) values ('$foto', '$judul', '$berita') ");
         if ($query){
-            echo "<script>alert ('Simpan Berita Berhasil'); window.location='../adminContent/berita.php'</script>";
+            echo "<script>alert ('Simpan Berita Berhasil'); window.location='../admin/berita.php'</script>";
         }else{
-            echo "<script>alert('Simpan Berita Gagal'); window.location='../adminContent/berita.php'</script>";
+            echo "<script>alert('Simpan Berita Gagal'); window.location='../admin/berita.php'</script>";
         }
     }else{
-        echo "<script>alert('Simpan Berita Gagal'); window.location='../adminContent/berita.php'</script>";
+        echo "<script>alert('Simpan Berita Gagal'); window.location='../admin/berita.php'</script>";
     }
 ?>
