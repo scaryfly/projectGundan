@@ -49,8 +49,11 @@
   <div class="sidebar-heading text-black">Daftar Menu</div>
   <div class="list-group list-group-flush">
     <a href="./admin.php" class="list-group-item list-group-item-action bg-white text-black ">Admin</a>
+    <a href="./member.php" class="list-group-item list-group-item-action bg-white text-black ">Member</a>
     <a href="./berita.php" class="list-group-item list-group-item-action bg-white text-black ">Berita</a> 
     <a href="./galery.php" class="list-group-item list-group-item-action bg-white text-black ">Galery</a>
+    <a href="./kategoriPenelitian.php" class="list-group-item list-group-item-action bg-white text-black ">Kategori Penelitian</a>
+    <a href="./kategoriPengembangan.php" class="list-group-item list-group-item-action bg-white text-black ">Kategori Pengembangan</a>
   </div>
 </div>
 

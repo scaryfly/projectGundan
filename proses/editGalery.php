@@ -4,9 +4,11 @@
     {
         $id = $_GET['id'];
         $judul = $_POST['judul'];
-        $sql = mysqli_query($conn,"SELECT * FROM tbgalery where id_galery = '$id'");
+        $deskripsi = $_POST['deskripsi'];
+        $uploader = $_POST['uploader'];
+        $sql = mysqli_query($conn,"SELECT * FROM tb_galery where id_gambar = '$id'");
         $data = mysqli_fetch_array($sql);
-        $foto = $data['foto'];
+        $foto = $data['gambar'];
         $tmpFoto = $_FILES['gambar']['name']; //mengambil data nama file
         if(!empty($tmpFoto)){ //conditional apabila mengubah gambar
             $uploaddir = '../gambar/' ; // upload gambar ke folder images
@@ -20,13 +22,13 @@
                 $foto = 'gambar/default';
             }
         }
-        $sql = mysqli_query($conn,"update tbgalery set foto='$foto',judul='$judul' where id_galery='$id'");
+        $sql = mysqli_query($conn,"update tb_galery set gambar='$foto',nama_gambar='$judul',deskripsi='$deskripsi',uploader=$uploader where id_gambar=$id");
         if ($sql) {
-            echo "<script>alert ('Edit Galery Berhasil'); window.location='../adminContent/galery.php'</script>";
+            echo "<script>alert ('Edit Galery Berhasil'); window.location='../admin/galery.php'</script>";
         }else{
-            echo "<script>alert ('Edit Galery Gagal'); window.location='../adminContent/galery.php'</script>";
+            echo "<script>alert ('Edit Galery Gagal'); window.location='../admin/galery.php'</script>";
         }
     }else{
-        echo "<script>alert ('Edit Galery Gagal'); window.location='../adminContent/galery.php'</script>";
+        echo "<script>alert ('Edit Galery Gagal'); window.location='../admin/galery.php'</script>";
     }
 ?>
