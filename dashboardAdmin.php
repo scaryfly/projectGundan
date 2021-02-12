@@ -54,6 +54,8 @@
     <a href="./galery.php" class="list-group-item list-group-item-action bg-white text-black ">Galery</a>
     <a href="./kategoriPenelitian.php" class="list-group-item list-group-item-action bg-white text-black ">Kategori Penelitian</a>
     <a href="./kategoriPengembangan.php" class="list-group-item list-group-item-action bg-white text-black ">Kategori Pengembangan</a>
+    <a href="./penelitian.php" class="list-group-item list-group-item-action bg-white text-black ">Penelitian</a>
+    <a href="./pengembangan.php" class="list-group-item list-group-item-action bg-white text-black ">Pengembangan</a>
   </div>
 </div>
 
