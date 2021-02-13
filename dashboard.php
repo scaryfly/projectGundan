@@ -1,4 +1,5 @@
 <?php   
+    session_start();
     include("./db.php");
 ?>
 <!DOCTYPE html>
@@ -51,7 +52,13 @@
             <a class="navbrand" href="index.php">Galery</a>
             <a class="navbrand" href="index.php">Penelitian</a>
             <a class="navbrand" href="index.php">Pengembangan</a>
-            <a class="navbrand" href="login.php">Masuk</a>
+            <?php
+                if( !isset($_SESSION['user']) ){
+                    echo "<a class='navbrand' href='login.php'>Masuk</a>";
+                }else{
+                    echo "<a class='navbrand' href='login.php'>dah masok</a>";
+                }
+            ?>
         </div>
     </div>
     <div class="container-fluid bg-light">

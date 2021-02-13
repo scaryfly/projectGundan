@@ -15,7 +15,7 @@
                     session_start();
                     $_SESSION['user'] = $user['id_member'];
 
-                    echo "<script>window.location='../adminContent/berita.php';</script>";
+                    echo "<script>window.location='../index.php';</script>";
 
                 }else{
                     echo "<script>alert('Username dan Password Salah');window.location='../login.php';</script>";    
