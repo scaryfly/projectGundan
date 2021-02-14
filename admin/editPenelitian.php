@@ -45,7 +45,7 @@
         </div>
         <div class='form-group'>
             <label for='gambar'>Upload Foto</label>
-            <input type='file' class='form-control' name='gambar' id='gambar'" >
+            <input type='file' class='form-control' name='gambar' id='gambar' >
         </div>
         <div class='form-group'>
             <label for='deskripsi'>Deskripsi</label>

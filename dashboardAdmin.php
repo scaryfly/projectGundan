@@ -56,6 +56,7 @@
     <a href="./kategoriPengembangan.php" class="list-group-item list-group-item-action bg-white text-black ">Kategori Pengembangan</a>
     <a href="./penelitian.php" class="list-group-item list-group-item-action bg-white text-black ">Penelitian</a>
     <a href="./pengembangan.php" class="list-group-item list-group-item-action bg-white text-black ">Pengembangan</a>
+    <a href="./forum.php" class="list-group-item list-group-item-action bg-white text-black ">Topik Diskusi</a>
   </div>
 </div>
 

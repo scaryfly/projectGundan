@@ -12,7 +12,6 @@
                 <label for='nama_penelitian'>Nama Kategori</label>
                 <input type='text' class='form-control' name='nama_penelitian' id='nama_penelitian' required>
             </div>
-            
             <div class='form-group d-flex justify-content-center'>
                 <button type='submit' class='btn btn-primary' name='submit'>Submit</button>
             </div>

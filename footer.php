@@ -30,7 +30,7 @@
     </div>
     <div class='footer-2 bg-primary'>
         <div class='container-fluid'>
-            <span>© 2020 Designed by Rizky Aditya </span>
+            <span>© 2020 Designed with ❤ </span>
         </div>
     </div>
 </body>

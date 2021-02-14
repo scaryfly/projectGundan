@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/galery.css">
 
+    
+    <link href='./lib/fullcalendar/main.css' rel='stylesheet' />
+
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -37,6 +40,8 @@
 
 
     <script src='./js/index.js'></script>
+    <script src='./lib/fullcalendar/main.js'></script>
+    <script src='./js/calendar.js'></script>
 
 </head>
 <body class="bg-light">
@@ -48,15 +53,27 @@
     <div class=" container-fluid sticky-top" id="navbar-2">
         <div class="d-flex justify-content-around">
             <a class="navbrand" href="index.php">Beranda</a>
-            <a class="navbrand" href="index.php">Forum</a>
-            <a class="navbrand" href="index.php">Galery</a>
-            <a class="navbrand" href="index.php">Penelitian</a>
-            <a class="navbrand" href="index.php">Pengembangan</a>
+            <a class="navbrand" href="forum.php">Forum</a>
+            <a class="navbrand" href="galery.php">Galery</a>
+            <a class="navbrand" href="penelitian.php">Penelitian</a>
+            <a class="navbrand" href="pengembangan.php">Pengembangan</a>
             <?php
                 if( !isset($_SESSION['user']) ){
                     echo "<a class='navbrand' href='login.php'>Masuk</a>";
                 }else{
-                    echo "<a class='navbrand' href='login.php'>dah masok</a>";
+                    $id_user = $_SESSION['user'];
+                    $sql = mysqli_query($conn,"SELECT nama_lengkap FROM tabel_member where id_member = $id_user");
+                    $user = mysqli_fetch_assoc($sql); #memecahkan data row yang di pilih menjadidata dalam bentuk array 
+
+                    echo "
+                    <a class='navbrand dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                        ".$user['nama_lengkap']."
+                    </a>
+                    <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
+                        <a class='dropdown-item' href='./profile.php'>Lihat Profil</a>
+                        <div class='dropdown-divider'></div>
+                        <a class='dropdown-item' href='./proses/logout.php'>Keluar</a>
+                    </div>";
                 }
             ?>
         </div>

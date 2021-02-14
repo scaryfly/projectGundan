@@ -1,40 +1,48 @@
 <?php 
   include("./dashboard.php");
 ?>
-<div class="container-fluid d-flex justify-content-around">
-    <div id="carouselExampleControls" class="carousel slide carousel-container" data-ride="carousel">
-      <div class="carousel-inner">
-<?php
-  $tampil = mysqli_query ($conn,"SELECT gambar, judul FROM tbberita order by id_berita desc limit 5");
-  $num = mysqli_num_rows($tampil);
-  $no = 0;
-  while($array=mysqli_fetch_array($tampil))
-      {
-        if($no==0){
-          echo " 
-            <div class='carousel-item active'>
-              <img src='".$array["gambar"]."' class='w-100 h-100'>
-            </div>";
-        }else{
-          echo " 
-            <div class='carousel-item'>
-              <img src='".$array["gambar"]."' class='w-100 h-100'>
-            </div>";
-        }
-        $no++;
-      }
-?>
+<div  class='container'>
+  <div class='row'>
+    <div clas='col-4'>
+      <div class='card'style="width: 300px !important;">
+        <div class='card-header'>
+          <p><strong>Berita Terikini</strong></p>
+        </div>
+        <div class='card-body overflow-auto' style='height:300px !important;'>
+          <table class='table' >
+            <?php
+              $tampil = mysqli_query ($conn,"SELECT * FROM tb_berita_terkini order by id desc");
+              $num = mysqli_num_rows($tampil);
+              if($num==0)
+              {
+
+              }else{
+                while($array=mysqli_fetch_array($tampil))
+                {
+                  echo "
+                  <tr>
+                    <td><a href='berita.php?id=".$array['id']."' class='btn btn-white text-left'>".$array['nama_berita']."</a></td>
+                  </tr>";
+                }
+              }
+            ?>
+          </table>
+        </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <div class='card mt-4'style="width: 300px !important;">
+        <div class='card-header'>
+          <p><strong>Kalender</strong></p>
+        </div>
+        <div class='card-body'>
+          <div id='calendar'></div>
+      </div>
+      </div>
+    </div>
+    <div class='col-8 ml-5'>
+      <div class='card'style="width: 800px !important; height: 800px !important;"></div>
     </div>
   </div>
+</div>
 </div>
 <?php
   include("./footer.php");
