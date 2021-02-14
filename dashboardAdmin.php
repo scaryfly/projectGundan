@@ -80,9 +80,7 @@
           <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
             ".$admin['nama']."
           </a>
-          <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>
-            <a class='dropdown-item' href='./editPassword.php?id=".$id."'>Ubah Password</a>
-            <div class='dropdown-divider'></div>
+          <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdown'>  
             <a class='dropdown-item' href='../proses/logout.php'>Keluar</a>
           </div>";
           ?>
