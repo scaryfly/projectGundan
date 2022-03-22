@@ -30,6 +30,3 @@ $berita = $data['isi_berita'];#dapatkan kelamin mahasiswa array (row) 'berita'
     </div>
     </div>
 </div>
-<?php
-include("./footer.php");
-?>
